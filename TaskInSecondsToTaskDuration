@@ -1,0 +1,50 @@
+
+
+#include <iostream>
+#include<cmath>
+using namespace std;
+
+
+struct Task_Duration{
+    int numberofDays;
+    int numberofHours;
+    int numberofMinutes;
+    int numberofseconds;
+};
+
+int readTaskInseconds(int &totalseconds){
+    cout<<"Please Enter Totalseconds"<<endl;
+    cin>>totalseconds;
+    return totalseconds;
+}
+
+Task_Duration secondsToTaskDuration(int totalseconds)
+{
+ Task_Duration task_Duration ;
+ 
+ const int secondsPerDay = 24*60*60;
+ const int secondsPerHours = 60*60;
+ const int secondsPerMinute = 60;
+ 
+ task_Duration.numberofDays = floor(totalseconds / secondsPerDay);
+ int reminder = totalseconds % secondsPerDay;
+ task_Duration.numberofHours = reminder / secondsPerHours;
+ reminder = reminder % secondsPerHours;
+ task_Duration.numberofMinutes = reminder / secondsPerMinute;
+ reminder = reminder % secondsPerMinute;
+ task_Duration.numberofseconds =  reminder;
+ 
+ return task_Duration;
+    
+}
+
+int main()
+{
+   int totalseconds;
+   readTaskInseconds(totalseconds);
+   Task_Duration task = secondsToTaskDuration(totalseconds);
+   cout << task.numberofDays << ","<<task.numberofHours<<","<<task.numberofMinutes<<","<<task.numberofseconds;
+
+
+    return 0;
+}
