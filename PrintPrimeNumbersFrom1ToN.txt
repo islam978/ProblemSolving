@@ -1,0 +1,71 @@
+
+
+#include <iostream>
+#include<string>
+using namespace std;
+
+
+
+enum enPrimeOrNot{
+    Prime = 1,
+    NotPrime = 2
+};     
+
+int readNumber(string msg){
+    int num;
+    cout<< msg <<endl;
+    cin >> num ;
+    return num;
+}
+
+enPrimeOrNot checkPrimewithDifferntWay(int num){
+ 
+ int m = num/2;
+ for(int counter =2;counter<=m;counter++){
+ if(num % counter ==0)
+ return enPrimeOrNot::NotPrime;
+ }
+    return enPrimeOrNot::Prime;
+
+}
+
+enPrimeOrNot checkPrime(int num){
+    if(num % 2 ==0 && num !=2) return enPrimeOrNot::NotPrime;
+    if(num % 3 ==0  && num !=3) return enPrimeOrNot::NotPrime;
+    if(num % 5 ==0&& num !=5) return enPrimeOrNot::NotPrime;
+    int f = 5;
+    while (num > f){
+        if(num % f+2 == 0)return enPrimeOrNot::NotPrime;
+        if(num % f+6 ==0)return enPrimeOrNot::NotPrime;
+        f= f+6;
+    }
+    return enPrimeOrNot::Prime;
+
+}
+
+void listOfPrimefor1toNum(int n, int  arrPrime[]){
+   
+    int count = 0;
+    for(int i = 1;i<=n;i++){
+        if(checkPrime(i) == enPrimeOrNot::Prime){
+           arrPrime[count] = {i};
+        cout<<arrPrime[count]<<",";
+        }
+        count++;
+        
+    }
+  
+    
+    
+}
+
+
+int main()
+{
+int num = readNumber("Please enter number");
+int arrPrime[num] = {};
+cout << "Prime Numbers from " << 1 << " To " << num<< "  are :"<<endl;    
+listOfPrimefor1toNum( num,arrPrime);
+
+    return 0;
+}
