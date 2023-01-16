@@ -25,9 +25,10 @@ int countDigitFrequency(int num,short digit){
     while(num>0){
         
         reminder = num % 10;
+        num = num /10;
         if(reminder == digit)
           freqCount++;
-        num = num /10;
+        
     
       
     }
