@@ -14,7 +14,7 @@ int ReadNumber(string message){
 
 void printArray(int element[],int length){
     
-       for(int i=1;i<=length;i++){
+       for(int i=0;i<length;i++){
         cout<<element[i]<<"  ";
     }
     cout<<endl;
@@ -27,7 +27,7 @@ int RandomNumber(int From, int To) {
     
 } 
 void fillArrayWithRandomNumbers(int arr[],int lengthArray){
-       for(int i=1;i<=lengthArray;i++){
+       for(int i=0;i<lengthArray;i++){
           arr[i] = RandomNumber(1,100);
           
        
