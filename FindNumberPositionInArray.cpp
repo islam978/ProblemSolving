@@ -1,9 +1,4 @@
-///Ex:
-//Input :3
-//OutPut:
-// Key [1] :NVZS-RQPO-ERKM-HCDG
-// Key [2] :SQTE-GSOD-LTGK-ALCP
-// Key [3] :JCIA-SZQZ-QCLY-EPGY
+
 
 #include<iostream>
 #include<cstdlib>
