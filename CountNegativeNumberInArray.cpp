@@ -49,7 +49,7 @@ int main() {
  fillArrayWithRandomNumbers(arr,Length);
  cout << "\nArray Elements:\n";   
  PrintArray(arr, Length); 
- cout<<"\nPositive Numbers count is:" ;
+ cout<<"\nNegative Numbers count is:" ;
  cout<< CountPositiveNumberInArray (arr,Length);
 
  return 0;
